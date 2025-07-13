@@ -2,11 +2,11 @@
 
 ## The CI/CD concept
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image.png)
+![image.png](Resources/image.png)
 
 CONTINOUS INTEGRATION                                 CONT. DELIVERY                              CONT. DIPLOYMENT
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/c835d8b7-bc11-4e65-87db-1b6100308ee9.png)
+![image.png](Resources/c835d8b7-bc11-4e65-87db-1b6100308ee9.png)
 
 ### CI(CONTINUOUS INTEGRATION)
 
@@ -25,11 +25,11 @@ CONTINOUS INTEGRATION                                 CONT. DELIVERY            
 
 Successful CI means that once a developer’s changes to an application are merged, those changes are validated by automatically building the application and running different levels of automated testing, typically unit and integration tests, to ensure the changes haven’t broken the app. This means testing everything from classes and function to the different modules that comprise the entire app. One of the benefits of CI is that if automated testing discovers a conflict between new and existing code, it is easier to fix those bugs quickly and often.
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%201.png)
+![image.png](Resources/image%201.png)
 
 # How Most Of Firms Works?
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%202.png)
+![image.png](Resources/image%202.png)
 
 ## CD(Continuous DELIVERY/DEPLOYMENT)
 
@@ -62,13 +62,13 @@ In essence ,
 
 ## WORKING OF CI/CD
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%203.png)
+![image.png](Resources/image%203.png)
 
 This increases the efficiency of Application!
 
 NOW THIS IS HOW A MULTI-INFRA CI/CD WORKS:
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%204.png)
+![image.png](Resources/image%204.png)
 
 # JENKINS
 
@@ -78,7 +78,7 @@ A Jenkins job encapsulates a specific task or process within the CI/CD pipeline.
 
 TYPES OF JOBS:
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%205.png)
+![image.png](Resources/image%205.png)
 
 ## CREATING A JOB
 
@@ -109,29 +109,29 @@ This can make sense for projects where you can easily recreate the same artifact
 
 Note that Jenkins does not discard items immediately when this configuration is updated, or as soon as any of the configured values are exceeded; these rules are evaluated each time a build of this project completes.
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%206.png)
+![image.png](Resources/image%206.png)
 
 -
 
 So here we have something  called AGENTS which are acting as end nodes this means that the jenkins will setup the job and the job is distributed to the agent node.
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%207.png)
+![image.png](Resources/image%207.png)
 
 It is not must to install jenkins to slave nodes we much have java in agents!
 
 ## CREATING JENKINS AGENTS:
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%208.png)
+![image.png](Resources/image%208.png)
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%209.png)
+![image.png](Resources/image%209.png)
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2010.png)
+![image.png](Resources/image%2010.png)
 
 ## GITHUB WEBHOOKS:
 
 Now if we update some thing on our developement build code on github and we want it to automatically updated on the JENKINS Server we can do this by using GiT  WEBHOOKS.
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2011.png)
+![image.png](Resources/image%2011.png)
 
 ### CREDENTIALS BINDING:
 
@@ -141,21 +141,21 @@ Here am showing dockerhub connection with jenkins using credential binding:
 
 Here we are at this path/
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2012.png)
+![image.png](Resources/image%2012.png)
 
 After this click on add credentials:
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2013.png)
+![image.png](Resources/image%2013.png)
 
 Now here we have to enter our username and password—> in place of original password we will enter a dummy personal access token from dockerhub .
 
 Go to account settings in docker hub—>
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2014.png)
+![image.png](Resources/image%2014.png)
 
 Click on generate new token….
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2015.png)
+![image.png](Resources/image%2015.png)
 
 Now use that token as a password!
 
@@ -181,23 +181,23 @@ It works on micro-services.
 
 **In monolithic all the content of a software, an application stays at only a single location.**
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2016.png)
+![image.png](Resources/image%2016.png)
 
 Interdependency is very much larger if one of the component fails the software shuts down!
 
 I**n micro-services a big load of application or software is broken down in tiny chunks of services like database, front-end ,back-end and etc…**
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2017.png)
+![image.png](Resources/image%2017.png)
 
 IF one of service stops, impact and working is only done on that rest will remain same.
 
 # ARCHITECTURE OF KUBERNETES
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2018.png)
+![image.png](Resources/image%2018.png)
 
 **A master node controlling all other worker nodes in a cluster and doing the pre-requisite work assigned.**
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2019.png)
+![image.png](Resources/image%2019.png)
 
 - **API SERVER:**  It is the communication gateway between master and worker nodes.
 - **Scheduler:** To schedule and run the pods.
@@ -232,7 +232,7 @@ Kubernetes doesn’t implement networking itself. Instead, it **delegates** pod 
 
 ### [**kind**](https://sigs.k8s.io/kind)
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2020.png)
+![image.png](Resources/image%2020.png)
 
 **is a tool for running local Kubernetes clusters using Docker container “nodes”.**
 
@@ -779,9 +779,9 @@ That's it! You've successfully installed Minikube on Ubuntu, and you can now sta
 
 **Namespaces in Kubernetes are virtual clusters within a physical cluster. They are used to logically isolate resources, users, and workloads within the same K8s cluster.**
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2021.png)
+![image.png](Resources/image%2021.png)
 
-![image.png](DEVOPS%20206215520e9d806eb584da8cfaf888a7/image%2022.png)
+![image.png](Resources/image%2022.png)
 
 ### What Gets Namespaced?
 
