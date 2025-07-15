@@ -817,3 +817,149 @@ kubectl create namespace dev
 kubectl get svc -n dev
 
 ```
+
+```bash
+# =====================
+# NAMESPACES
+# =====================
+
+# List all namespaces
+kubectl get namespaces
+
+# List all pods in a specific namespace
+kubectl get pods -n <namespace>
+
+# Set default namespace for your current context
+kubectl config set-context --current --namespace=<namespace>
+
+# Create a new namespace
+kubectl create namespace dev
+
+# Use a namespace temporarily for a single command
+kubectl get svc -n dev
+
+# Get all the pods across namespaces
+kubectl get pods -A
+
+# Create namespace 'nginx' for running pods
+kubectl create namespace nginx
+
+# Get interactive shell in a pod
+kubectl exec -it -n nginx nginx -- /bin/bash
+
+# =====================
+# CLUSTER RELATED COMMANDS
+# =====================
+
+kubectl cluster-info
+kubectl version --short
+kubectl get nodes
+kubectl describe node <node-name>
+
+# =====================
+# POD RELATED COMMANDS
+# =====================
+
+kubectl get pods -A
+kubectl get pods -n kube-system
+kubectl run nginx --image=nginx
+kubectl get pod nginx
+kubectl describe pod nginx
+kubectl delete pod nginx
+
+# =====================
+# DEPLOYMENT COMMANDS
+# =====================
+
+kubectl create deployment myapp --image=nginx
+kubectl expose deployment nginx --port=80 --type=NodePort
+kubectl get deployments
+kubectl scale deployment myapp --replicas=3
+kubectl rollout status deployment myapp
+kubectl rollout undo deployment myapp
+kubectl delete deployment myapp
+
+# =====================
+# SERVICES
+# =====================
+
+kubectl expose deployment myapp --port=80 --type=NodePort
+kubectl get services
+kubectl describe service myapp
+kubectl delete service myapp
+
+# =====================
+# NAMESPACES (REPEATED COMMANDS)
+# =====================
+
+kubectl get ns
+kubectl create namespace dev
+kubectl run nginx --image=nginx -n dev
+kubectl delete ns dev
+
+# =====================
+# RBAC
+# =====================
+
+kubectl create serviceaccount dev-user -n dev
+kubectl create role dev-reader --verb=get,list,watch --resource=pods -n dev
+kubectl create rolebinding dev-binding --role=dev-reader --serviceaccount=dev:dev-user -n dev
+
+# =====================
+# LOGS & SHELL
+# =====================
+
+# View logs
+kubectl logs nginx
+
+# Open shell inside pod
+kubectl exec -it nginx -- /bin/sh
+
+# =====================
+# TAINTS AND TOLERATIONS
+# =====================
+
+kubectl taint nodes <node-name> key=value:NoSchedule
+kubectl describe node <node-name>
+kubectl taint nodes <node-name> key:NoSchedule-  # remove taint
+
+# =====================
+# HELM AND INGRESS
+# =====================
+
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+
+# =====================
+# INGRESS CONTROLLER
+# =====================
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.0/deploy/static/provider/kind/deploy.yaml
+kubectl get pods -n ingress-nginx
+
+# =====================
+# DEBUGGING
+# =====================
+
+kubectl describe pod <pod>
+kubectl get events --sort-by=.metadata.creationTimestamp
+kubectl top nodes
+kubectl top pods
+kubectl get componentstatuses
+
+# =====================
+# CLEANUP
+# =====================
+
+kind delete cluster --name kind-cluster
+
+# =====================
+# PORT FORWARDING
+# =====================
+
+kubectl run nginx --image=nginx --port=80
+kubectl expose pod nginx --type=ClusterIP --port=80
+kubectl port-forward svc/nginx 8080:80
+```
+
