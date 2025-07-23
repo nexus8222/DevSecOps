@@ -952,7 +952,7 @@ kubectl get componentstatuses
 # CLEANUP
 # =====================
 
-kind delete cluster --name kind-cluster
+kNind delete cluster --name kind-cluster
 
 # =====================
 # PORT FORWARDING
@@ -963,3 +963,5 @@ kubectl expose pod nginx --type=ClusterIP --port=80
 kubectl port-forward svc/nginx 8080:80
 ```
 
+
+#New Notes will Be uploaded tommorow.. they will cover half of k8s
