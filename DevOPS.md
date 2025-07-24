@@ -961,6 +961,7 @@ kNind delete cluster --name kind-cluster
 kubectl run nginx --image=nginx --port=80
 kubectl expose pod nginx --type=ClusterIP --port=80
 kubectl port-forward svc/nginx 8080:80
+
 ```
 
 
