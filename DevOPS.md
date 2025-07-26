@@ -966,3 +966,5 @@ kubectl port-forward svc/nginx 8080:80
 
 
 #New Notes will Be uploaded tommorow.. they will cover half of k8s
+
+A NEW PROJECT ALONG WITH CHAT APP IS GOING TO LAUNCHED!!! TOMMOROW!
