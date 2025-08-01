@@ -102,6 +102,7 @@ The last stable and last successful build are also excluded from these rules.
 ---
 
 
+
 In the *Advanced* section, the same options can be specified, but specifically for build **artifacts**. If enabled, build artifacts will be discarded for any builds which exceed the defined limits. The builds themselves will still be kept; only the associated artifacts, if any, will be deleted. For example, if a project builds some software and produces a large installer, which is archived, you may wish to always keep the console log and information about which source control commit was built, while for disk space reasons, you may want to keep only the last three installers that were built.
 
 This can make sense for projects where you can easily recreate the same artifacts later by building the same source control commit again.
